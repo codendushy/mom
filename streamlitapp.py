@@ -44,7 +44,7 @@ if uploaded_file is not None:
     st.audio("temp.wav")
     emotion = predict_emotion("temp.wav")
     st.success(f"Predicted Emotion: {emotion.capitalize()}")
-'''
+
 with open('app.py', 'w') as f:
     f.write(streamlit_app_code)
 
