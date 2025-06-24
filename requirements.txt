@@ -1,7 +1,7 @@
 streamlit
 librosa
 soundfile
-tensorflow
+tensorflow==2.11.0
 scikit-learn
 numpy
 pandas
