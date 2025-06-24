@@ -7,7 +7,8 @@ import pickle
 MODEL_PATH = 'model3.keras'
 LABEL_ENCODER_PATH = 'label_encoder.pkl'
 
-@st.cache_resource
+# Use st.cache for compatibility with older Streamlit versions
+@st.cache(allow_output_mutation=True)
 def load_artifacts():
     model = load_model(MODEL_PATH)
     with open(LABEL_ENCODER_PATH, 'rb') as f:
