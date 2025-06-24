@@ -7,8 +7,7 @@ import pickle
 MODEL_PATH = 'model3.keras'
 LABEL_ENCODER_PATH = 'label_encoder.pkl'
 
-# Use st.cache for compatibility with older Streamlit versions
-@st.cache(allow_output_mutation=True)
+@st.cache_resource
 def load_artifacts():
     model = load_model(MODEL_PATH)
     with open(LABEL_ENCODER_PATH, 'rb') as f:
@@ -45,3 +44,7 @@ if uploaded_file is not None:
     st.audio("temp.wav")
     emotion = predict_emotion("temp.wav")
     st.success(f"Predicted Emotion: {emotion.capitalize()}")
+'''
+with open('app.py', 'w') as f:
+    f.write(streamlit_app_code)
+
